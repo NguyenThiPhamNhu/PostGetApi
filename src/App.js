@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import {withRouter} from 'react-router-dom';
+
+import { withRouter } from 'react-router-dom';
 // import nhung class moi trong thu vien
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
-  
+
 } from "react-router-dom";
 
 //import cac file kia
@@ -17,75 +18,55 @@ import Posts from './components/Posts';
 import Post from './components/Post';
 import Add from './components/Add';
 import Admin from './components/Admin';
+import Footer from './components/Footer';
+import Login from './components/Login';
 
 
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-        <script src="//code.jquery.com/jquery.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-        
-        <div class="navbar">
-          <a class="navbar-brand" href="/home">Home</a>
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="/posts">Posts</a>
-            </li>
-            <li>
-              <a href="/add">Add</a>
-            </li>
-            <li>
-              <a href="/admin">Admin</a>
-            </li>
-            <li></li>
+      <div className="app">
+        <Router>
+          <ul>
+            <li> <img className="Slide" alt="slide" src="https://i.ebayimg.com/images/g/CCkAAOSwgHZdZ4k-/s-l300.jpg" /></li>
+            <li>VIT TRAVEL</li>
+            {/* <li>
+            <input type="search" name="" id="input" class="form-control" value="" required="required" title="" />       
+            </li> */}
+            <li>Day</li>
+            <li>Guess </li>
             
+            <li><Link to="/home">HOME</Link></li>
+            <li><Link to="/add">ADD</Link></li>
+            <li><Link to="/about">ABOUT US</Link></li>
+            <li><Link to="/post">TOUR</Link></li>
+            <li><Link to="/posts">SERVICE</Link></li>
+            <li><Link to="/admin">ADMIN</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            {/* <li><Link to="/posts">LOG IN</Link></li>
+            <li><Link to="/posts">LOG OUT</Link></li> */}
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
-              </form>
-        </div>
-        
-        
-      
-        <Switch>
-              <Route path="/home" exact>  
-                  <Home />
-              </Route>
-
-              <Route path="/about">
-                  <About />
-              </Route>
-              <Route path="/add" >
-                  <Add />
-              </Route>
-              <Route path="/admin" >
-                  <Admin />
-              </Route>
-              
-
-              <Route path="/posts" exact>
-                  <Posts />
-              </Route>
-
-              <Route path={"/posts/:id"}>
+          
+          <Switch>
+          <Route path="/home" exact><Home /></Route>
+            <Route path="/about"> <About /></Route>
+            <Route path="/add"> <Add /></Route>
+            <Route path="/admin"> <Admin /></Route>
+            <Route path="/login"> <Login /></Route>
+            <Route path={"/posts/:id"}>
                   <Post />
               </Route>
-              
-              
-              
-        </Switch>
-        
-      </Router>
+          </Switch>
+          
+        </Router>
+        <Footer />
+      </div>
     )
   }
 }
 
+
+
+   
 
 export default App;

@@ -1,4 +1,4 @@
-
+ 
 import React, { Component } from 'react';
 
 import {
@@ -36,7 +36,7 @@ class Posts extends Component {
                         
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <div class="thumbnail">
-                                <img src="https://i.imgur.com/L5h9KfK.jpg" alt="" />
+                                <img src="https://i.imgur.com/pTjrhWS.jpg" alt="" />
                                 <div class="caption">
                                     <h1>{item.title}</h1>
                                     <p>
